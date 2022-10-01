@@ -57,11 +57,51 @@ app.post('/signup',(req,res)=>{
             });
         }
     });
-    
-    
-    
-    
+});
 
+app.post('/login',(req,res)=>{
+    const username = req.body.username;
+    const password = req.body.password;
+    const query = 'SELECT id, username, usertype FROM signup WHERE username = ? AND password = ?';
+    connection.query(query,[username,password],(err,data)=>{
+        if(err){
+            res.status(500).send({
+                success:false,
+                msg:err.sqlMessage,
+                data:[]
+            })
+        }else if( data.length > 0 && data[0].usertype == 0){
+            const user = {
+                id:data[0].id,
+                username:data[0].username,
+                usertype:data[0].usertype
+            }
+            const token = jwt.sign(user,trainer,{ expiresIn:'72h'});
+            res.send({
+                success:true,
+                msg:"Login succesful as Trainer",
+                data:token
+            });
+        }else if (data.length > 0 && data[0].usertype == 1){
+            const user = {
+                id:data[0].id,
+                username:data[0].username,
+                usertype:data[0].usertype
+            }
+            const token = jwt.sign(user,joiner,{ expiresIn:'72h'});
+            res.send({
+                success:true,
+                msg:"Login successful as joiner",
+                data:token
+            });
+        }else{
+            res.status(500).send({
+                success:false,
+                msg:"Invalid User",
+                data:[]
+            });
+        }
+    });
 })
 
 const port = 7500;
