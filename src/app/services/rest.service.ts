@@ -11,6 +11,10 @@ export class RestService {
 
 Signup(data:any){
   return this._http.post(environment.url + '/signup',data);
-}
+};
+
+login(data:any){
+  return this._http.post(environment.url + '/login',data);
+};
 
 }

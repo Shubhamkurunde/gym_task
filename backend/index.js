@@ -102,7 +102,8 @@ app.post('/login',(req,res)=>{
             });
         }
     });
-})
+});
+
 
 const port = 7500;
 app.listen(port, ()=>{
