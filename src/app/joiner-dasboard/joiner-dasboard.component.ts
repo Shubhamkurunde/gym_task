@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StateService } from '../services/state.service';
 
 @Component({
   selector: 'app-joiner-dasboard',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./joiner-dasboard.component.css']
 })
 export class JoinerDasboardComponent implements OnInit {
+  
+  
 
-  constructor() { }
-
+  constructor(public _state:StateService) { }
+   
   ngOnInit(): void {
+    
   }
+   
+  
 
 }

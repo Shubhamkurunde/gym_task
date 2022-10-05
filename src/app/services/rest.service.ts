@@ -17,4 +17,8 @@ login(data:any){
   return this._http.post(environment.url + '/login',data);
 };
 
+get_single_id(id:number){
+    return this._http.get(environment.url + '/get_single_id' + id) 
+};
+
 }

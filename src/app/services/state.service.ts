@@ -8,6 +8,7 @@ import jwt_decode from 'jwt-decode'
 export class StateService {
  token = '';
  verified :any;
+ usertype :any;
   constructor(private _router:Router) { }
 
   decodetoken(){
@@ -28,5 +29,4 @@ export class StateService {
     localStorage.removeItem('token');
     this._router.navigate(['login']);
   }
-
 }
