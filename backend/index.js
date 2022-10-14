@@ -120,7 +120,7 @@ app.get("/get_single_id/:id",(req,res)=>{
             res.status(200).send({
                 success:true,
                 msg:"success",
-                data:data
+                data:data.affectedRow
             });
         }
     });

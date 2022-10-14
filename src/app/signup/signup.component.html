@@ -15,8 +15,8 @@
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="form3Example1c" >Your Name</label>
                       <input type="text" class="form-control" formControlName="name">
-                      <span class="text-danger" *ngIf="name.errors?.['required'] && name.touched || name.dirty"  >Name is required</span>
-                      <span class="text-danger" *ngIf="name.errors?.['minLength'] && name.touched || name.dirty"  >Name is too short</span>
+                      <span class="text-danger" *ngIf="name.errors?.['required'] && name.touched"  >Name is required</span>
+                      <!-- <span class="text-danger" *ngIf="name.errors?.['minLength'] && name.touched || name.dirty"  >Name is too short</span> -->
                     </div>
                   </div>
 
@@ -34,10 +34,10 @@
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="form3Example4c">Mobile</label>
                       <input type="number" class="form-control" formControlName="mobile">
-                      <span class="text-danger" *ngIf="mobile.errors?.['required'] && mobile.touched || mobile.dirty">Please Enter Mobile Number</span>
-                      <span class="text-danger" *ngIf="mobile.errors?.['maxLength'] && mobile.touched || mobile.dirty">Mobile Num is invalid</span>
-                      <span class="text-danger" *ngIf="mobile.errors?.['minLength'] && mobile.touched || mobile.dirty">Mobile Num is invalid</span>
-                      <span class="text-danger" *ngIf="mobile.errors?.['pattern'] && mobile.touched || mobile.dirty">Mobile Num is invalid</span>
+                      <span class="text-danger" *ngIf="mobile.errors?.['required'] && mobile.touched">Please Enter Mobile Number</span>
+                      <span class="text-danger" *ngIf="mobile.errors?.['maxLength'] && mobile.touched ">Mobile Num is invalid</span>
+                      <!-- <span class="text-danger" *ngIf="mobile.errors?.['minLength'] && mobile.touched || mobile.dirty">Mobile Num is invalid</span> -->
+                      <!-- <span class="text-danger" *ngIf="mobile.errors?.['pattern'] && mobile.touched || mobile.dirty">Mobile Num is invalid</span> -->
 
                     </div>
                   </div>
@@ -47,8 +47,8 @@
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="form3Example4cd">Age</label>
                       <input type="number" class="form-control" formControlName="age">
-                      <span class="text-danger" *ngIf="age.errors?.['required'] && age.touched || age.dirty"  >Age required</span>
-                      <span class="text-danger" *ngIf="age.errors?.['minLength'] && age.touched || age.dirty"  >Age is invalid</span>
+                      <span class="text-danger" *ngIf="age.errors?.['required'] && age.touched "  >Age required</span>
+                      <span class="text-danger" *ngIf="age.errors?.['minLength'] && age.touched"  >Age is invalid</span>
 
                     </div>
                   </div>
@@ -57,8 +57,8 @@
                     <div class="form-outline flex-fill mb-0">
                       <label class="form-label" for="form3Example4cd">Username </label>
                       <input type="text" class="form-control" formControlName="username">
-                      <span class="text-danger" *ngIf="username.errors?.['required'] && username.touched || username.dirty"  >user name required</span>
-                      <span class="text-danger" *ngIf="username.errors?.['pattern'] && username.touched || username.dirty "> Age required </span>
+                      <span class="text-danger" *ngIf="username.errors?.['required'] && username.touched "  >user name required</span>
+                      <!-- <span class="text-danger" *ngIf="username.errors?.['pattern'] && username.touched "> Invalid username </span> -->
 
                     </div>
                   </div>
@@ -68,6 +68,9 @@
                       <label class="form-label" for="form3Example4cd">Password</label>
                       <input type="password" class="form-control" formControlName="password">
                       <span class="text-danger" *ngIf="password.errors?.['required'] && password.touched" > Password required</span>
+                      <!-- <span class="text-danger" *ngIf="password.errors?.['pattern'] && password.touched" > Not Valid</span> -->
+
+                      
                     </div>
                   </div>
                   <div class="form-check">

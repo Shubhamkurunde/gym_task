@@ -11,7 +11,7 @@ export class TrainerDashboardComponent implements OnInit {
   constructor(private _state:StateService) { }
 
   ngOnInit(): void {
-    alert(`Welcome ${this._state.usertype.name}`);
+    // alert(`Welcome ${this._state.usertype.name}`);
   }
 
 }
